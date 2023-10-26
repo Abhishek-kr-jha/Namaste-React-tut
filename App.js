@@ -1,20 +1,41 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+//React.createElements ReactElement => Object=> HTMLElements(render)
 
-const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "I'm an h1 tag"),
-    React.createElement("h2", {}, "I'm an h2 tag"),
-  ]),
-  React.createElement("div", { id: "child2" }, [
-    React.createElement("h1", {}, "I'm an h1 tag"),
-    React.createElement("h2", {}, "I'm an h2 tag"),
-  ]),
-]);
+// const heading = React.createElement("h1", { id: "heading" }, "Namaste React🚀");
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(heading);
 
-console.log(parent); // object
+//JSX - ITS HTML LIKE SYNTAX or XML Syntax
+// JSX =>React.CreateElement=> JS OBJECT => HtmlElement(render);
+
+// const heading = <h1 className="head">Namaste React using JSX🚀</h1>;
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(parent);
+// React Components
+
+// React Functional  Component
+// const HeadingComponent = ()=>{
+//   return <h1 className="heading">Namaste React Functional Component</h1>
+
+// }
+
+const Title = ()=>(<h1 className="head">Namaste React using JSX🚀</h1>);
+
+const numnber = 10000;
+
+const HeadingComponent2 = () => (
+  <div id="container">
+     {/* Componet composition => component inside component */}
+    <Title/>
+    {numnber} 
+    {Title()}
+   
+    <h1 className="heading">Namaste React Functional Component</h1>
+  </div>
+);
+
+root.render(<HeadingComponent2/>);
